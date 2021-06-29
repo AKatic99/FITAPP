@@ -1,4 +1,24 @@
 <template>
+<div  class=animacija>
+       
+<vue-particles
+        color="#dedede"
+        :particleOpacity="0.7"
+        :particlesNumber="80"
+        shapeType="circle"
+        :particleSize="7"
+        linesColor="#dedede"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="4"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+      >
+      </vue-particles>
     <div id="register" class="login-page">
         <div class="form">
             <div class="login-form">
@@ -18,8 +38,7 @@
                     placeholder="Password"
                     type="password"
                     v-model="form.password"
-                    name="password"
-                />
+                    name="password"/>
                 <span v-if="errors.password" class="error-message">{{
                     errors.password[0]
                 }}</span>
@@ -29,9 +48,19 @@
                     placeholder="Confirm Password"
                     type="password"
                     v-model="form.password_confirmation"
-                    name="password_confirmation"
-                />
+                    name="password_confirmation"/>
             </div>
+                <div>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            
+                
+
+
             <div>
                 <button @click.prevent="saveForm" type="submit">
                     Register
@@ -43,6 +72,7 @@
             </p>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -53,13 +83,15 @@ export default {
                 name: "",
                 email: "",
                 password: "",
-                password_confirmation: ""
+                password_confirmation: "",
+                gender: ""
             },
             errors: []
         };
     },
     methods: {
         saveForm() {
+            this.form.gender = document.getElementById('gender').value;
             axios
                 .post("/api/register", this.form)
                 .then(() => {
@@ -74,10 +106,19 @@ export default {
 </script>
 
 <style scoped>
+.animacija{
+     background-color:rgba(0, 0, 0, 0.925)!important;
+}
 .login-page {
-    width: 360px;
+   width: 360px;
     padding: 8% 0 0;
-    margin: auto;
+    margin:auto;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left:36%;
+
+
 }
 .form {
     position: relative;
@@ -104,7 +145,7 @@ export default {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #4caf50;
+    background: #d8e43b;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -117,7 +158,7 @@ export default {
 .form button:hover,
 .form button:active,
 .form button:focus {
-    background: #43a047;
+    background: #d4e20a;
 }
 .form .message {
     margin: 15px 0 0;
@@ -125,7 +166,7 @@ export default {
     font-size: 12px;
 }
 .form .message a {
-    color: #4caf50;
+    color:black;
     text-decoration: none;
 }
 .form .register-form {

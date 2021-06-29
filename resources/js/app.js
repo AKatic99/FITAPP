@@ -6,12 +6,20 @@ window.Vue = require('vue').default;
 Vue.component('navbar', require('./components/navbar.vue').default);
 
 //Router
+import VueParticles from 'vue-particles';
+//import CKEditor from 'ckeditor4-vue';
+Vue.use(VueParticles);
 import VueRouter from 'vue-router';
 import routes from './routes';
+import VueCarousel from 'vue-carousel';
+import "bootswatch/dist/lux/bootstrap.min.css";
+Vue.use(VueCarousel);
 Vue.use(VueRouter);
 
+//Vue.use(CKEditor);
+
 //Glyphicons
-import {BootstrapVue, IconsPlugin} from 'bootstrap-vue';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 

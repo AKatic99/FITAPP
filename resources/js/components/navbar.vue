@@ -1,23 +1,27 @@
 <template >
     <nav>
-        <div>
-            <b-navbar toggleable="lg" type="dark" variant="dark">
-                <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <div id="app">
+            <b-navbar toggleable="lg" >
+                <b-navbar-toggle target="nav-collapse"> </b-navbar-toggle>
 
                 <b-collapse id="nav-collapse" is-nav>
-                    <b-navbar-nav class="topnav">
-                        <b-nav-item ><a><router-link class="active" to="/home" exact>Naslovna</router-link></a></b-nav-item>
+                    <b-navbar-nav class="topnav" >
+                        <b-nav-item ><a><router-link class="active" to="/" style="color:white; font-size:25px;" exact>FIT FORMA</router-link></a></b-nav-item>
+                        <b-nav-item ><a><router-link class="active" to="/onama" style="color:white; font-size:25px;" exact> O nama</router-link></a></b-nav-item>
+                        <b-nav-item ><a><router-link class="active" to="/plan"  style="color:white; font-size:25px;" exact>Plan i program</router-link></a></b-nav-item>
+                        
                     </b-navbar-nav>
+
                 
                     <b-navbar-nav class="ml-auto" >
                         <b-nav-form right v-if="!loggedin">
-                            <a><router-link to="/login" exact>Prijava</router-link></a>
-                            <a><router-link to="/register" exact>Registracija</router-link></a>
+                           <b-nav-item> <a><router-link to="/login" style="color:white; font-size:25px;" exact> Prijava</router-link></a></b-nav-item>
+                            <b-nav-item> <a><router-link to="/register" style="color:white; font-size:25px;" exact>Registracija</router-link></a></b-nav-item>
                         </b-nav-form>
 
                         <b-nav-form v-else>
-                            <a @click="mojProfil();"><router-link :to="`/home/${this.user.id}`">Profil</router-link></a>
-                            <a @click.prevent="logout"><router-link to="/home">Log out</router-link></a>
+                         <b-nav-item>   <a @click="mojProfil();"><router-link :to="`/vjezbeM`" style="color:white; font-size:25px;">Vježbe</router-link></a> </b-nav-item>
+                           <b-nav-item>  <a @click.prevent="logout"><router-link to="/home" style="color:white; font-size:25px;">Log out</router-link></a></b-nav-item>
                         </b-nav-form>
                     </b-navbar-nav>
                 </b-collapse>
@@ -44,7 +48,7 @@
                 this.$router.go()
             },
             mojProfil() {
-                window.location.href = "/home/" + this.user.id
+                window.location.href = "/vjezbeM"
             },
         },
 
@@ -76,52 +80,36 @@
 </script>
 
 <style scoped>
-.navbar.navbar-dark.bg-dark{
-    background-color: #4CAF50!important;
-}
-.ml-auto{
-  background-color: #4CAF50;
-    overflow: hidden;
+#app{
+    background-color: rgba(0, 0, 0, 0.925)!important;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow:hidden;
+    width: 100%;
+    font-size:20px;
+
 }
 .ml-auto a{
   float: left;
-  background-color: #4CAF50;
   color: #f2f2f2;
   text-align: center;
   padding: 10px 12px;
   text-decoration: none;
-  font-size: 25px;
-}
-.ml-auto a:hover{
-  background-color: #ddd;
-  color: black;
-}
-.ml-auto a:active{
-  color: white;
-}
-.topnav {
-    background-color: #4CAF50;
-    overflow: hidden;
+  
 }
 .topnav a {
   float: left;
-  background-color: #4CAF50;
-  color: #f2f2f2;
   text-align: center;
   padding: 7px 6px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
 }
-.topnav a:hover {
-  background-color: #ddd;
-  color: black !important;
-}
+
 .topnav a.active {
-  
   color: white;
 }
 .topnav-right {
   float: right;
-  
 }
+
 </style>

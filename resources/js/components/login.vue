@@ -1,4 +1,25 @@
 <template>
+<div class=animacija>
+    
+<vue-particles
+        color="#dedede"
+        :particleOpacity="0.7"
+        :particlesNumber="80"
+        shapeType="circle"
+        :particleSize="7"
+        linesColor="#dedede"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="4"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+      >
+      </vue-particles>
+      
     <div id="login" class="login-page">
         <div class="form">
             <div class="login-form">
@@ -8,6 +29,7 @@
                 }}</span>
             </div>
             <div>
+                
                 <input
                     placeholder="Password"
                     type="password"
@@ -22,19 +44,22 @@
                 <a @click.prevent="loginUser" href="/login"
                     ><button @click.prevent="loginUser" type="submit">
                         Log in
-                    </button></a
-                >
+                    </button></a >
             </div>
+            
             <p class="message">
                 Niste registrirani?
                 <a
                     ><router-link to="/register" exact
                         >Napravite račun</router-link
-                    ></a
-                >
+                    ></a >
             </p>
+            
         </div>
+        
     </div>
+    </div>
+    
 </template>
 
 <script>
@@ -53,7 +78,7 @@ export default {
             axios
                 .post("/api/login", this.form)
                 .then(() => {
-                    this.$router.push("/");
+                    this.$router.push("/vjezbeM");
                     this.$router.go();
                 })
                 .catch(error => {
@@ -65,20 +90,32 @@ export default {
 </script>
 
 <style scoped>
+
+.animacija{
+    background-color:rgba(0, 0, 0, 0.925)!important;
+    
+}
 .login-page {
     width: 360px;
     padding: 8% 0 0;
-    margin: auto;
+    margin:auto;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left:36%;
+
 }
 .form {
     position: relative;
+    
     z-index: 1;
     background: #ffffff;
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 50 auto 50px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+   
 }
 .form input {
     font-family: "Roboto", sans-serif;
@@ -95,7 +132,7 @@ export default {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #4caf50;
+    background: #d8e43b;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -108,7 +145,7 @@ export default {
 .form button:hover,
 .form button:active,
 .form button:focus {
-    background: #43a047;
+    background: #d4e20a;
 }
 .form .message {
     margin: 15px 0 0;
@@ -116,7 +153,7 @@ export default {
     font-size: 12px;
 }
 .form .message a {
-    color: #4caf50;
+    color: black;
     text-decoration: none;
 }
 .form .register-form {

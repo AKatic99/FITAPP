@@ -1,81 +1,162 @@
-<template class="home">
-    <div id="home" class="main" >
-        <div class="photos">
-            <ul class="display">
-                <li v-for="article in articles" :key="article.id">
-                    <span><a href="#">
-                        <img :id="'articleIMG_' + article.id" width="350" height="400" />
-                        </a></span>
-                    <span>{{article.title}}</span>
-                    <p>{{article.description}}</p>
-                    <a :id="'article_' + article.id" href="#" target="_blank">Detalji...</a>
-                </li>                
-            </ul>
-        </div>
-    </div>
+<template>
+  <div class="naslovna">
+      <div id="example">
+  <carousel>
+  <slide>
+    <img src="/storage/2.jpg">
+  </slide>
+  <slide>
+    <img src="/storage/2.jpg">
+  </slide>
+    <slide>
+    <img src="/storage/2.jpg">
+  </slide>
+      <slide>
+    <img src="/storage/2.jpg">
+  </slide>
+</carousel>
+<div class="column">
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header"><h4 class="card-title">MOŽEŠ!</h4></div>
+  <div class="card-body">
+    <p class="card-text">Nedostaje ti motivacije? Želiš krenuti, ali se pitaš možeš li ti to...
+      <br>
+      <br>
+      "Osamdeset posto uspjeha je pojaviti se."-Woody Allen
+    </p>
+  </div>
+  </div>
+</div>
+<div class="column">
+<div class="card  mb-3" style="max-width: 20rem;">
+  <div class="card-header"><h4 class="card-title">KRENI!</h4></div>
+  <div class="card-body">
+    <p class="card-text">Pokreni se ...!
+      <br>
+      <br>
+      "Bez obzira koliko si dobar, uvijek možeš postati bolji i to je uzbudljiv dio."-Tiger Woods<br>
+    </p>
+  </div>
+</div>
+</div>
+<div class="column">
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header"><h4 class="card-title">NAPRAVI PLAN!</h4></div>
+  <div class="card-body">
+    <p class="card-text">Želiš li doći do uspjeha? Ključ uspjeha je dobar plan!
+      <br>
+      <br>
+      „Prilike se ne događaju. Vi ih stvarate“ Chris Grosser
+      <br>
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="column">
+<div class="card  mb-3" style="max-width: 20rem;">
+  <div class="card-header"><h4 class="card-title">ZAPOČNI S NAMA...</h4></div>
+  <div class="card-body">
+     <p class="card-text">
+       <br>
+       <br>
+        Sada je red na tebe!
+        <br>
+        <br>
+        <br>
+     </p>
+  </div>
+</div>
+</div>
+</div>
+   <div class="jumbotron bg-white">
+  <h1 class="display-3">FIT FORMA</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><b>PROBLEMI</b></th>
+      <th scope="col"><b>CILJEVI</b></th>
+      <th scope="col"><b>SVRHA</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Udaljenost od teretane</td>
+      <td>Ušteda vremena</td>
+      <td>Bolja organiziranost</td>
+    </tr>
+    <tr>
+      <td>Skupa oprema</td>
+      <td>Ušteda novca</td>
+      <td>Bolje raspolaganje novca</td>
+    </tr>
+    <tr>
+      <td>Gužva u teretanama</td>
+      <td>Zdravlje</td>
+      <td>Zdravo tijelo i duh</td>
+    </tr>
+  </tbody>
+</table>
+  <hr class="my-4">
+  <!--<h3>Prijavi se!</h3>
+  <p class="lead">
+    <a class="btn btn-primary" href="/login" role="button">Prijava</a>
+    <a class="btn btn-primary" href="/register" role="button">Registracija</a>
+  </p>-->
+</div>
+  </div>
+  
 </template>
 
-<script>
-    export default {
-        data () {
-            return {
-                user: null,
-                articles: null,
-            }
-        },
-    }
-</script>
+<!--<script>
+export default {
+  name: 'home',
+        methods: {
+          pushPrijava(){
+            this.$router.push('/login');
+          },
+        pushRegistracija(){
+             this.$router.push('/registracija');
+        }
+        }
+ }
+</script>-->
 
-<style scoped>
-    .home{
-        margin: auto;
-    }
-    .display{
-          padding: 0;      /* Override defaults for lists */
-  margin: 0;       /* Override defaults for lists */
-  width: 70%;
-  max-width:100%;
-  min-width: 350px;
-  max-height:100%;
+<style>
+.VueCarousel-slide {
+  position: relative;
+  background:black;
+  color: #fff;
+  font-family: Arial;
+  font-size: 24px;
+  text-align: center;
   min-height: 400px;
-  margin: auto;
-  position:relative;
-    }
-    .photos {
-        display: block;
-    }
-    .photos ul {
-        /* align: center; */
-        list-style: none;
-    }
-    .photos ul li { 
-        display: inline;
-        list-style: none;
-        /*float: left;*/
-        padding: 20px;
-        margin: 10px;
-        text-align:center; 
-        background-color: #fff;  
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);  
-    }
-    .photos ul li span {
-        color: rgb(5, 5, 5);
-    }
-    
-    .photos ul li a {
-        display: block;
-        /*
-        margin-right: 10px;
-        margin-bottom: 7px; */
-        opacity: 0.75;
-        -webkit-transition: all 0.3s linear;
-        -moz-transition: all 0.3s linear;
-        transition: all 0.3s linear;
-    }
-    .photos ul li a:hover {
-        opacity: 1.0;
-    }
-    .photos ul li a img {
-        border: 6px solid #4CAF50;
-    }
+}
+
+/*.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}*/
+.column{
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+.table-hover{
+  background-color:rgba(233, 229, 8, 0.89);
+  color: #fff;
+}
+.display-3{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 380px;
+}
+.lead{ 
+	 position: relative;
+    top:1400px;
+    margin-left: 35%;
+} 
+ 
+
 </style>
