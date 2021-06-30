@@ -62,7 +62,7 @@ export default {
         });
     
         //Fetches the appropriate details of the currently viewed article
-        axios.get(`/projekti/fsre_rwa/2020/g07/api/viewPost/${postId}`).then((res)=>{
+        axios.get(`/api/viewPost/${postId}`).then((res)=>{
             this.info = res.data;
             //Check if the article page exists
             if (this.info != 0) {
