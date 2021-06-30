@@ -86,7 +86,7 @@ export default {
             postInfo.append('naslov', this.form.naslov);
             postInfo.append('tekst', this.form.tekst);
             postInfo.append('spol', document.getElementById("spol").value);
-            postInfo.append('more_info', this.more_info);
+            postInfo.append('more_info', this.form.more_info);
             postInfo.append('photo', this.photo);
 
             axios.post('/projekti/fsre_rwa/2020/g07/api/dodajVjezbu', postInfo).then(() =>{

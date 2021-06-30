@@ -16,7 +16,7 @@ export default{
     routes: [
         
         {
-            path: '/',
+            path: '/projekti/fsre_rwa/2020/g07/',
             component: home,
             name: 'home',
         },
@@ -26,12 +26,12 @@ export default{
             name: 'notFound',
         },
         {
-            path: '/onama',
+            path: '/projekti/fsre_rwa/2020/g07/onama',
             component: onama,
             name: 'onama',
         },
         {
-            path: '/viewPost/:id',
+            path: '/projekti/fsre_rwa/2020/g07/viewPost/:id',
             component: viewPost,
             name: 'viewPost',
             props: true,
@@ -51,7 +51,7 @@ export default{
             props: true,
             beforeEnter: (to, form, next) => {
                 //Check if user is logged in
-                axios.get('/api/authenticated').then(()=>{
+                axios.get('/projekti/fsre_rwa/2020/g07/api/authenticated').then(()=>{
                     next()                    
                 }).catch(()=>{
                     return next({ name: 'home'})
@@ -60,13 +60,13 @@ export default{
         },
         
         {
-            path: '/dodajVjezbu',
+            path: '/projekti/fsre_rwa/2020/g07/dodajVjezbu',
             component: dodajVjezbu,
             name: 'dodajVjezbu',
             props: true,
             beforeEnter: (to, form, next) => {
                 //Check if user is logged in
-                axios.get('/api/authenticated').then(()=>{
+                axios.get('/projekti/fsre_rwa/2020/g07/api/authenticated').then(()=>{
                     next()                    
                 }).catch(()=>{
                     return next({ name: 'home'})
@@ -75,13 +75,13 @@ export default{
         },
         
         {
-            path: '/vjezbeM',
+            path: '/projekti/fsre_rwa/2020/g07/vjezbeM',
             component: vjezbeM,
             name: 'vjezbeM',
             props: true,
             beforeEnter: (to, form, next) => {
                 //Check if user is logged in
-                axios.get('/api/authenticated').then(()=>{
+                axios.get('/projekti/fsre_rwa/2020/g07/api/authenticated').then(()=>{
                     next()                    
                 }).catch(()=>{
                     return next({ name: 'home'})
@@ -90,13 +90,13 @@ export default{
         },
 
         {
-            path: '/vjezbeW',
+            path: '/projekti/fsre_rwa/2020/g07/vjezbeW',
             component: vjezbeW,
             name: 'vjezbew',
              props: true,
             beforeEnter: (to, form, next) => {
                 //Check if user is logged in
-                axios.get('/api/authenticated').then(()=>{
+                axios.get('/projekti/fsre_rwa/2020/g07/api/authenticated').then(()=>{
                     next()                    
                 }).catch(()=>{
                     return next({ name: 'home'})
@@ -104,18 +104,18 @@ export default{
             }
         },
         {
-            path: '/plan',
+            path: '/projekti/fsre_rwa/2020/g07/plan',
             component: plan,
             name: 'plan',
         },
         {
-            path: '/login',
+            path: '/projekti/fsre_rwa/2020/g07/login',
             component: login,
             name: 'login',
             //Checks if user is already logged in. If they are, then redirects them to home
             
             beforeEnter: (to, form, next) => {
-                axios.get('api/authenticated').then(()=>{
+                axios.get('/projekti/fsre_rwa/2020/g07/api/authenticated').then(()=>{
                     return next({name: 'vjezbeM'})
                 }).catch(()=>{
                     next()
@@ -123,12 +123,12 @@ export default{
             }
         },
             {
-                path: '/register',
+                path: '/projekti/fsre_rwa/2020/g07/register',
                 component: register,
                 name: 'register',
                 //Checks if user is already logged in. If they are, then redirects them to home
                 beforeEnter: (to, form, next) => {
-                    axios.get('api/authenticated').then(()=>{
+                    axios.get('/projekti/fsre_rwa/2020/g07/api/authenticated').then(()=>{
                         return next({name: 'home'})
                     }).catch(()=>{
                         next()
