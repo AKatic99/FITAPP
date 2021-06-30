@@ -6,22 +6,22 @@
 
                 <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav class="topnav" >
-                        <b-nav-item ><a><router-link class="active" to="/" style="color:white; font-size:25px;" exact>FIT FORMA</router-link></a></b-nav-item>
-                        <b-nav-item ><a><router-link class="active" to="/onama" style="color:white; font-size:25px;" exact> O nama</router-link></a></b-nav-item>
-                        <b-nav-item ><a><router-link class="active" to="/plan"  style="color:white; font-size:25px;" exact>Plan i program</router-link></a></b-nav-item>
+                        <b-nav-item ><a><router-link class="active" to="/projekti/fsre_rwa/2020/g07/" style="color:white; font-size:25px;" exact>FIT FORMA</router-link></a></b-nav-item>
+                        <b-nav-item ><a><router-link class="active" to="/projekti/fsre_rwa/2020/g07/onama" style="color:white; font-size:25px;" exact> O nama</router-link></a></b-nav-item>
+                        <b-nav-item ><a><router-link class="active" to="/projekti/fsre_rwa/2020/g07/plan"  style="color:white; font-size:25px;" exact>Plan i program</router-link></a></b-nav-item>
                         
                     </b-navbar-nav>
 
                 
                     <b-navbar-nav class="ml-auto" >
                         <b-nav-form right v-if="!loggedin">
-                           <b-nav-item> <a><router-link to="/login" style="color:white; font-size:25px;" exact> Prijava</router-link></a></b-nav-item>
-                            <b-nav-item> <a><router-link to="/register" style="color:white; font-size:25px;" exact>Registracija</router-link></a></b-nav-item>
+                           <b-nav-item> <a><router-link to="/projekti/fsre_rwa/2020/g07/login" style="color:white; font-size:25px;" exact> Prijava</router-link></a></b-nav-item>
+                            <b-nav-item> <a><router-link to="/projekti/fsre_rwa/2020/g07/register" style="color:white; font-size:25px;" exact>Registracija</router-link></a></b-nav-item>
                         </b-nav-form>
 
                         <b-nav-form v-else>
-                         <b-nav-item>   <a @click="mojProfil();"><router-link :to="`/vjezbeM`" style="color:white; font-size:25px;">Vježbe</router-link></a> </b-nav-item>
-                           <b-nav-item>  <a @click.prevent="logout"><router-link to="/home" style="color:white; font-size:25px;">Log out</router-link></a></b-nav-item>
+                         <b-nav-item>   <a @click="mojProfil();"><router-link :to="`/projekti/fsre_rwa/2020/g07/vjezbeM`" style="color:white; font-size:25px;">Vježbe</router-link></a> </b-nav-item>
+                           <b-nav-item>  <a @click.prevent="logout"><router-link to="/projekti/fsre_rwa/2020/g07/home" style="color:white; font-size:25px;">Log out</router-link></a></b-nav-item>
                         </b-nav-form>
                     </b-navbar-nav>
                 </b-collapse>
@@ -42,23 +42,23 @@
         },
         methods: {
             logout(){
-                axios.post('/logout').then(()=>{
+                axios.post('/projekti/fsre_rwa/2020/g07/logout').then(()=>{
                 })
-                this.$router.push('/')
+                this.$router.push('/projekti/fsre_rwa/2020/g07/')
                 this.$router.go()
             },
             mojProfil() {
-                window.location.href = "/vjezbeM"
+                window.location.href = "/projekti/fsre_rwa/2020/g07/vjezbeM"
             },
         },
 
         mounted() {
-            axios.get('/api/user').then((res)=>{
+            axios.get('/projekti/fsre_rwa/2020/g07/api/user').then((res)=>{
                 this.user = res.data;
                 console.log(this.user)
                 //If the currently logged in user is banned, then log them out and redirect to a site.
                 if(this.user.isBanned == 1) {
-                    axios.post('/api/logout').then(()=>{
+                    axios.post('/projekti/fsre_rwa/2020/g07/api/logout').then(()=>{
                         alert('Zabranjen vam je pristup uslugama stranice. Za više informacija, kontaktirajte nas.');
                         this.$router.push('banned');
                         this.$router.go(); 

@@ -34,9 +34,9 @@ export default {
      
       
       deletePost(){
-        axios.post(`/api/deletePost/${this.info[0].id}`).then( (res) => {
+        axios.post(`/projekti/fsre_rwa/2020/g07/api/deletePost/${this.info[0].id}`).then( (res) => {
           alert("Post uspješno obrisan!");
-          this.$router.push('/notFound');
+          this.$router.push('/projekti/fsre_rwa/2020/g07/notFound');
         });
       }
     },
@@ -46,14 +46,14 @@ export default {
         let postId = parseInt(allNumbers[allNumbers.length - 1], 10);
 
         //Checks if the user is an admin
-        axios.get(`/api/user`).then( (res) => {
+        axios.get(`/projekti/fsre_rwa/2020/g07/api/user`).then( (res) => {
             this.loggedIn = 1;
             this.user = res.data;
             if (this.user.role > 0) {
                 //Controls the visibility of the "Edit Article" button
                 this.userIsAdmin = 1;
                 setTimeout( () => {
-                  document.getElementById("editIt").href=`/edit/${postId}`;
+                  document.getElementById("editIt").href=`/projekti/fsre_rwa/2020/g07/edit/${postId}`;
                 }, 0);
             }
 
@@ -62,20 +62,20 @@ export default {
         });
     
         //Fetches the appropriate details of the currently viewed article
-        axios.get(`/api/viewPost/${postId}`).then((res)=>{
+        axios.get(`/projekti/fsre_rwa/2020/g07/api/viewPost/${postId}`).then((res)=>{
             this.info = res.data;
             //Check if the article page exists
             if (this.info != 0) {
                 document.getElementById("naslov").innerText = this.info[0].naslov;
                 document.getElementById("tekst").innerText = this.info[0].tekst;
                 document.getElementById("more_info").innerText = this.info[0].more_info;
-                document.getElementById('slika').src=`/storage/${this.info[0].slika}`;
+                document.getElementById('slika').src=`/projekti/fsre_rwa/2020/g07/storage/${this.info[0].slika}`;
             } else {
                 //^ If the article page doesn't exist
-                this.$router.push(`/notFound/${postId}`);
+                this.$router.push(`/projekti/fsre_rwa/2020/g07/notFound/${postId}`);
             }
         }).catch( (error) => {
-            this.$router.push(`/notFound/${postId}`);
+            this.$router.push(`/projekti/fsre_rwa/2020/g07/notFound/${postId}`);
         });
 
     },//endmounted

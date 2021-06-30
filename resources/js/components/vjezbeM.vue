@@ -1,7 +1,7 @@
 <template class="home">
     <div id="home" class="main" >
          <div class="button">
-    <a class="btn btn-primary " href="/dodajVjezbu" v-if="userIsAdmin" id="dodaj" role="button"> DODAJ NOVI POST</a>   
+    <a class="btn btn-primary " href="/projekti/fsre_rwa/2020/g07/dodajVjezbu" v-if="userIsAdmin" id="dodaj" role="button"> DODAJ NOVI POST</a>   
         </div>
         <div class="photos">
             <ul class="display">
@@ -11,7 +11,7 @@
                         </a></span>
                     <span>{{post.naslov}}</span>
                     <p>{{post.tekst}}</p>
-                     <a :id="'post_' + post.id" href="`viewPost/${post.id}`" target="_blank">Detaljnije</a>
+                     <a :id="'post_' + post.id" href="`/projekti/fsre_rwa/2020/g07/viewPost/${post.id}`" target="_blank">Detaljnije</a>
                 
                 </li>            
             </ul>
@@ -36,18 +36,18 @@
         },
          mounted() {
             //Get data of the currently logged in user
-            axios.get('/api/user').then((res)=>{
+            axios.get('/projekti/fsre_rwa/2020/g07/api/user').then((res)=>{
                 this.user = res.data;
             });
 
-             axios.get(`/api/user`).then( (res) => {
+             axios.get(`/projekti/fsre_rwa/2020/g07/api/user`).then( (res) => {
             this.loggedIn = 1;
             this.user = res.data;
             if (this.user.role > 0) {
                 //Controls the visibility of the "Edit Article" button
                 this.userIsAdmin = 1;
                 setTimeout( () => {
-                  document.getElementById("dodaj").href=`/dodajVjezbu`;
+                  document.getElementById("dodaj").href=`/projekti/fsre_rwa/2020/g07/dodajVjezbu`;
                 }, 0);
             }
 
@@ -57,15 +57,15 @@
 
             
             //Get data of all articles
-            axios.get('/api/getPosts').then((res) => {
+            axios.get('/projekti/fsre_rwa/2020/g07/api/getPosts').then((res) => {
                 this.posts = res.data;
                 this.posts.forEach( post => {
                     //Needs to wait a negligible amount of time before trying to access the associated "<img>" and "<href>" tags because the v-for needs time to create them
 
 
                        setTimeout(() => {
-                        document.getElementById("slika" + post.id).src=`/storage/${post.slika}`;
-                        document.getElementById("post_" + post.id).href=`viewPost/${post.id}`;
+                        document.getElementById("slika" + post.id).src=`/projekti/fsre_rwa/2020/g07/storage/${post.slika}`;
+                        document.getElementById("post_" + post.id).href=`/projekti/fsre_rwa/2020/g07/viewPost/${post.id}`;
 
 
                        
