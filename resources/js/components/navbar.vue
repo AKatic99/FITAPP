@@ -7,7 +7,7 @@
                 <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav class="topnav" >
                         <b-nav-item ><a><router-link class="active" to="/projekti/fsre_rwa/2020/g7/" style="color:white; font-size:25px;" exact>FIT FORMA</router-link></a></b-nav-item>
-                        <b-nav-item ><a><router-link class="active" to="/projekti/fsre_rwa/2020/g7/onama" style="color:white; font-size:25px;" exact> proba </router-link></a></b-nav-item>
+                        <b-nav-item ><a><router-link class="active" to="/projekti/fsre_rwa/2020/g7/onama" style="color:white; font-size:25px;" exact> O nama  </router-link></a></b-nav-item>
                         <b-nav-item ><a><router-link class="active" to="/projekti/fsre_rwa/2020/g7/plan"  style="color:white; font-size:25px;" exact>Plan i program</router-link></a></b-nav-item>
                         
                     </b-navbar-nav>
