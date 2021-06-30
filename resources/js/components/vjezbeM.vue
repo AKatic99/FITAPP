@@ -64,7 +64,7 @@
 
 
                        setTimeout(() => {
-                        document.getElementById("slika" + post.id).src=`/projekti/fsre_rwa/2020/g7/storage/${post.slika}`;
+                        document.getElementById("slika" + post.id).src=`/projekti/fsre_rwa/2020/g7/images/${post.slika}`;
                         document.getElementById("post_" + post.id).href=`/projekti/fsre_rwa/2020/g7/viewPost/${post.id}`;
 
 

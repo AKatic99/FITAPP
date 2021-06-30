@@ -52,10 +52,10 @@ vrijeme nakon kojeg tvoje tijelo počinje osjećati posljedice ako preskočiš t
         <p2> "Fit nije odredište.<br> To je način života. " </p2>
         </div>
         <div class=slika1>
-            <img src="/projekti/fsre_rwa/2020/g7/storage/plan3.jpg"   width="450" height="300">
+            <img src="/projekti/fsre_rwa/2020/g7/images/plan3.jpg"   width="450" height="300">
         </div>
          <div class=slika2>
-            <img src="/projekti/fsre_rwa/2020/g7/storage/plan4.jpg"   width="450" height="300">
+            <img src="/projekti/fsre_rwa/2020/g7/images/plan4.jpg"   width="450" height="300">
         </div>
         <div class=button>
    

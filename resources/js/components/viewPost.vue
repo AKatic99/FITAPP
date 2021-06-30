@@ -69,7 +69,7 @@ export default {
                 document.getElementById("naslov").innerText = this.info[0].naslov;
                 document.getElementById("tekst").innerText = this.info[0].tekst;
                 document.getElementById("more_info").innerText = this.info[0].more_info;
-                document.getElementById('slika').src=`/projekti/fsre_rwa/2020/g7/storage/${this.info[0].slika}`;
+                document.getElementById('slika').src=`/projekti/fsre_rwa/2020/g7/images/${this.info[0].slika}`;
             } else {
                 //^ If the article page doesn't exist
                 this.$router.push(`/projekti/fsre_rwa/2020/g7/notFound/${postId}`);

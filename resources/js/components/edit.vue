@@ -107,7 +107,7 @@
                     this.form.tekst = this.info[0].tekst;
                     this.form.spol = this.info[0].spol;
                     this.form.more_info = this.info[0].more_info;
-                    document.getElementById('slika').src=`/projekti/fsre_rwa/2020/g7/storage/${this.info[0].slika}`;
+                    document.getElementById('slika').src=`/projekti/fsre_rwa/2020/g7/images/${this.info[0].slika}`;
                 } else {
                     //^ If the article page doesn't exist
                     this.$router.push('/projekti/fsre_rwa/2020/g7/notFound');
