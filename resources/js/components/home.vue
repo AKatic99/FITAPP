@@ -3,16 +3,16 @@
       <div id="example">
   <carousel>
   <slide>
-    <img src="/projekti/fsre_rwa/2020/g07/storage/2.jpg">
+    <img src="/projekti/fsre_rwa/2020/g7/storage/2.jpg">
   </slide>
   <slide>
-    <img src="/projekti/fsre_rwa/2020/g07/storage/2.jpg">
+    <img src="/projekti/fsre_rwa/2020/g7/storage/2.jpg">
   </slide>
     <slide>
-    <img src="/projekti/fsre_rwa/2020/g07/storage/2.jpg">
+    <img src="/projekti/fsre_rwa/2020/g7/storage/2.jpg">
   </slide>
       <slide>
-    <img src="/projekti/fsre_rwa/2020/g07/storage/2.jpg">
+    <img src="/projekti/fsre_rwa/2020/g7/storage/2.jpg">
   </slide>
 </carousel>
 <div class="column">

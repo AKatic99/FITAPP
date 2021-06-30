@@ -11,10 +11,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->get('/authenticated', function () {
     return true;
 });
-Route::post('/projekti/fsre_rwa/2020/g07/register', 'App\Http\Controllers\RegisterController@register');
-Route::post('/projekti/fsre_rwa/2020/g07/login', 'App\Http\Controllers\LoginController@login');
-Route::post('/projekti/fsre_rwa/2020/g07/logout', 'App\Http\Controllers\LoginController@logout');
-Route::post('/projekti/fsre_rwa/2020/g07/dodajVjezbu', 'App\Http\Controllers\PostController@napraviPost');
+Route::post('/register', 'App\Http\Controllers\RegisterController@register');
+Route::post('/login', 'App\Http\Controllers\LoginController@login');
+Route::post('/logout', 'App\Http\Controllers\LoginController@logout');
+Route::post('dodajVjezbu', 'App\Http\Controllers\PostController@napraviPost');
 
 /*Route::get('register', [RegisterController::class, 'register']);
 Route::get('login', [RegisterController::class, 'login']);*/
@@ -26,9 +26,9 @@ Route::get('/unauthenticated', function () {
 
 
 
-Route::get('/projekti/fsre_rwa/2020/g07/getPosts', 'App\Http\Controllers\PostController@getPosts');
-Route::get('/projekti/fsre_rwa/2020/g07/viewPost/{id}', 'App\Http\Controllers\PostController@viewPost');
-Route::post('/projekti/fsre_rwa/2020/g07/edit/{id}', 'App\Http\Controllers\PostController@editPost');
-Route::post('/projekti/fsre_rwa/2020/g07/deletePost/{id}', 'App\Http\Controllers\PostController@deletePost');
+Route::get('/getPosts', 'App\Http\Controllers\PostController@getPosts');
+Route::get('/viewPost/{id}', 'App\Http\Controllers\PostController@viewPost');
+Route::post('/edit/{id}', 'App\Http\Controllers\PostController@editPost');
+Route::post('/deletePost/{id}', 'App\Http\Controllers\PostController@deletePost');
 
 

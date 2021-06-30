@@ -2,7 +2,7 @@
   <center>
     <h1>Not Found!</h1>
     <p>
-     <b><a href="/projekti/fsre_rwa/2020/g07/">Želite nazad?</a></b>
+     <b><a href="/projekti/fsre_rwa/2020/g7/">Želite nazad?</a></b>
     </p>
   </center>
 </template>

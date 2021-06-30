@@ -85,7 +85,7 @@
                 let allNumbers = window.location.href.replace(/[^0-9]/g, ' ').trim().split(/\s+/);
                 let postId = parseInt(allNumbers[allNumbers.length - 1], 10);
 
-                axios.post(`/projekti/fsre_rwa/2020/g07/api/edit/${postId}`, postInfo).then(() =>{
+                axios.post(`/projekti/fsre_rwa/2020/g7/api/edit/${postId}`, postInfo).then(() =>{
                     this.$router.push({ name: "vjezbeM"});
                 }).catch((error) =>{
                     this.errors = error.response.data.errors;
@@ -99,7 +99,7 @@
             let postId = parseInt(allNumbers[allNumbers.length - 1], 10);
         
             //Fetches the appropriate details of the currently viewed article
-            axios.get(`/projekti/fsre_rwa/2020/g07/api/viewPost/${postId}`).then( (res)=>{
+            axios.get(`/projekti/fsre_rwa/2020/g7/api/viewPost/${postId}`).then( (res)=>{
                 this.info = res.data;
                 //Check if the article page exists
                 if (this.info != 0) {
@@ -107,10 +107,10 @@
                     this.form.tekst = this.info[0].tekst;
                     this.form.spol = this.info[0].spol;
                     this.form.more_info = this.info[0].more_info;
-                    document.getElementById('slika').src=`/projekti/fsre_rwa/2020/g07/storage/${this.info[0].slika}`;
+                    document.getElementById('slika').src=`/projekti/fsre_rwa/2020/g7/storage/${this.info[0].slika}`;
                 } else {
                     //^ If the article page doesn't exist
-                    this.$router.push('/projekti/fsre_rwa/2020/g07/notFound');
+                    this.$router.push('/projekti/fsre_rwa/2020/g7/notFound');
                 }
             }).catch( (error) => {
                 console.log(error);
@@ -119,7 +119,7 @@
 
 
 
-            axios.get('/projekti/fsre_rwa/2020/g07/api/user').then((res)=>{
+            axios.get('/projekti/fsre_rwa/2020/g7/api/user').then((res)=>{
                 this.user = res.data;
             });
         },

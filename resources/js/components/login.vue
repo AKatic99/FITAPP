@@ -41,7 +41,7 @@
                 }}</span>
             </div>
             <div>
-                <a @click.prevent="loginUser" href="/projekti/fsre_rwa/2020/g07/login"
+                <a @click.prevent="loginUser" href="/projekti/fsre_rwa/2020/g7/login"
                     ><button @click.prevent="loginUser" type="submit">
                         Log in
                     </button></a >
@@ -50,7 +50,7 @@
             <p class="message">
                 Niste registrirani?
                 <a
-                    ><router-link to="/projekti/fsre_rwa/2020/g07/register" exact
+                    ><router-link to="/projekti/fsre_rwa/2020/g7/register" exact
                         >Napravite račun</router-link
                     ></a >
             </p>
@@ -76,9 +76,9 @@ export default {
     methods: {
         loginUser() {
             axios
-                .post("/projekti/fsre_rwa/2020/g07/api/login", this.form)
+                .post("/projekti/fsre_rwa/2020/g7/api/login", this.form)
                 .then(() => {
-                    this.$router.push("/projekti/fsre_rwa/2020/g07/vjezbeM");
+                    this.$router.push("/projekti/fsre_rwa/2020/g7/vjezbeM");
                     this.$router.go();
                 })
                 .catch(error => {

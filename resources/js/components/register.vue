@@ -68,7 +68,7 @@
             </div>
             <p class="message">
                 Već ste registrirani?
-                <a><router-link to="/projekti/fsre_rwa/2020/g07/login" exact>Prijavite se</router-link></a>
+                <a><router-link to="/projekti/fsre_rwa/2020/g7/login" exact>Prijavite se</router-link></a>
             </p>
         </div>
     </div>
@@ -93,7 +93,7 @@ export default {
         saveForm() {
             this.form.gender = document.getElementById('gender').value;
             axios
-                .post("/projekti/fsre_rwa/2020/g07/api/register", this.form)
+                .post("/projekti/fsre_rwa/2020/g7/api/register", this.form)
                 .then(() => {
                     this.$router.push({ name: "login" });
                 })

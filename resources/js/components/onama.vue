@@ -11,7 +11,7 @@
         <div class="card col-md-3 mt-100">
             <div class="card-content">
                 <div class="card-body p-0">
-                    <div class="profile"> <img src="/projekti/fsre_rwa/2020/g07/storage/l.jpg"> </div>
+                    <div class="profile"> <img src="/projekti/fsre_rwa/2020/g7/storage/2.jpg"> </div>
                     <div class="card-title"> Lana Pajević<br /></div>
                     <div class="card-subtitle">
                         <p> <small class="text-muted">Treća sam godina FSRE fakulteta, smjer računarstvo.Željela bih se baviti programiranjem u budućnosti. Za sada pokušavam kroz studij prikupiti što više znanja o ovoj struci te tako biti sretna i zadovoljna poslom koji jednog dana budem radila.</small> </p>
@@ -23,7 +23,7 @@
         <div class="card col-md-3 mt-100">
             <div class="card-content">
                 <div class="card-body p-0">
-                    <div class="profile"> <img src="/projekti/fsre_rwa/2020/g07/storage/a.jpg"> </div>
+                    <div class="profile"> <img src="/projekti/fsre_rwa/2020/g7/storage/2.jpg"> </div>
                     <div class="card-title"> Ankica Katić<br /></div>
                     <div class="card-subtitle">
                         <p> <small class="text-muted"> Imam 22 godinu. Studentica sam treće godine računarstva.Ovaj projekt je tek početak onoga što učim 
@@ -50,13 +50,13 @@
                 <b-row>
                
                 
-                <b-col><img src="/projekti/fsre_rwa/2020/g07/storage/b.jpg" >
+                <b-col><img src="/projekti/fsre_rwa/2020/g7/storage/b.jpg" >
                 <p>BOOTSTRAP-VUE</p>
                 </b-col>
-                <b-col><img src="/projekti/fsre_rwa/2020/g07/storage/Vuejs.png" >
+                <b-col><img src="/projekti/fsre_rwa/2020/g7/storage/Vuejs.png" >
                 <p>VUE JS</p>
                 </b-col>
-                <b-col><img src="/projekti/fsre_rwa/2020/g07/storage/laravel.jpg" >
+                <b-col><img src="/projekti/fsre_rwa/2020/g7/storage/laravel.jpg" >
                 <p>LARAVEL</p>
                 </b-col>
               

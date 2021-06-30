@@ -89,7 +89,7 @@ export default {
             postInfo.append('more_info', this.form.more_info);
             postInfo.append('photo', this.photo);
 
-            axios.post('/projekti/fsre_rwa/2020/g07/api/dodajVjezbu', postInfo).then(() =>{
+            axios.post('/projekti/fsre_rwa/2020/g7/api/dodajVjezbu', postInfo).then(() =>{
                 this.$router.push({ name: "vjezbeM"});
             }).catch((error) =>{
                 this.errors = error.response.data.errors;
@@ -97,7 +97,7 @@ export default {
         }
     } ,
     mounted() {
-            axios.get('/projekti/fsre_rwa/2020/g07/api/user').then((res)=>{
+            axios.get('/projekti/fsre_rwa/2020/g7/api/user').then((res)=>{
                 this.user = res.data;
             });
         },
