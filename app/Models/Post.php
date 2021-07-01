@@ -14,6 +14,6 @@ class Post extends Model
         'tekst',
         'slika',
         'spol',
-        'info',
+        'more_info',
     ];
 }

@@ -13,7 +13,7 @@
     <div class="forma2">
         <input placeholder="Tekst" type="text" v-model="form.tekst" name="tekst" />
          <div id="app">
-               <textarea class="box" placeholder="Detaljni opis" v-model="form.info"></textarea>
+               <textarea class="box" placeholder="Detaljni opis" v-model="form.more_info"></textarea>
     </div>
         
     </div>
